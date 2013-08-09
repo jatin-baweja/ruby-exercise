@@ -6,14 +6,17 @@ class Accounts
     @account_number = @@last_account_number
     @balance = 1000.00
   end
-    def debit(amount)
-    end
   public
     def deposit(amount)
       @balance += amount
+      print amount, " deposited into account no. ", @account_number, "\n"
     end
     def withdraw(amount)
-      @balance -= amount if amount <= @balance
-      puts "Sorry you cannot withdraw ", amount, ". Your account balance is insufficient."
+      if amount <= @balance
+        @balance -= amount
+        print amount, " withdrawn from account no. ", @account_number, "\n"
+      else
+        print "Sorry you cannot withdraw ", amount, ". Your account balance is insufficient.\n"
+      end
     end
 end
