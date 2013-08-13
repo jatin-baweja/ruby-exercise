@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 class String
   def to_s
     swapcase
