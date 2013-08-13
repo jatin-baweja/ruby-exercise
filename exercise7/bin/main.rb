@@ -1,7 +1,3 @@
 #!/usr/bin/env ruby
-class String
-  def to_s
-    swapcase
-  end
-end
+require_relative "../lib/string"
 puts "hello WORLD".to_s
