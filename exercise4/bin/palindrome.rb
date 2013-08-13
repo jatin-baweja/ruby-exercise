@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-def palindrome?(input_string)
+def check_palindrome(input_string)
   while !(input_string =~ /^q$/i)
     if input_string == input_string.reverse
       print input_string + " is a palindrome\n"
@@ -11,4 +11,4 @@ def palindrome?(input_string)
   end
 end
 puts "Enter a string (Enter 'q' OR 'Q' to quit):"
-palindrome?(gets.chomp)
+check_palindrome(gets.chomp)
