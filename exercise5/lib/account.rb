@@ -1,4 +1,4 @@
-class Accounts
+class Account
   @@last_account_number = 0;
   def initialize(name)
     @name = name
@@ -10,6 +10,9 @@ class Accounts
     def deposit(amount)
       @balance += amount
       print amount, " deposited into account no. ", @account_number, "\n"
+    end
+    def to_s
+      "\nAcc No.: #{@account_number}\nName: #{@name}\nBalance : #{@balance}\n"
     end
     def withdraw(amount)
       if amount <= @balance
