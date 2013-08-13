@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-def replace_vowels(input_string)
-  input_string = input_string.gsub(/[aeiou]/i, "*")
-  print input_string
-end
-replace_vowels(gets)
+require_relative "../lib/string"
+puts "Enter a String to replace vowels:"
+input_string = gets.chomp
+puts input_string.replace_vowels
