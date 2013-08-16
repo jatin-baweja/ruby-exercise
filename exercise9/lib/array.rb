@@ -1,15 +1,10 @@
 class Array
   def convert_to_hash
-    length_hash = Hash.new
+    hash_of_element_length = Hash.new {|hash, key| hash[key] = [] }
     for i in 0...length
-      if self[i].is_a? Integer
-        len = self[i].to_s.length
-      else
-        len = self[i].length
-      end
-      length_hash[len] ||= []
-      length_hash[len].push(self[i])
+      len = self[i].to_s.length
+      hash_of_element_length[len].push(self[i])
     end
-    length_hash
+    hash_of_element_length
   end
 end
