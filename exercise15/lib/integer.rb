@@ -5,7 +5,7 @@ class Integer
     when self > 1
       prime_numbers = [2]
       3.step(self, 2) do |num|
-        prime_numbers.push(num) if Prime.prime?(num)
+        prime_numbers.push(num) if num.prime?
       end
       "Prime Numbers in range : " + prime_numbers.to_s
     when self == 0 || self == 1
