@@ -8,7 +8,7 @@ class String
   end
   def get_adjusted_time_and_extra(time1, time2, extra = 0, adjuster = 60)
     total = Integer(time1) + Integer(time2) + extra
-    return (total % adjuster).to_s.rjust(2, '0') , total / adjuster
+    return (total % adjuster).to_s.rjust(2, '0'), total / adjuster
   end
   def add_and_adjust_time(time1, time2)
     total_time = []
