@@ -10,8 +10,8 @@ class Name
       else
         raise "First Name or Last Name cannot be nil"
       end
-    rescue RuntimeError => input_error
-      puts "Error in input: #{input_error}"
+    rescue Exception
+      puts "Error in input: #{ $! }"
     end
   end
 end
