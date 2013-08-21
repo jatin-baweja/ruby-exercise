@@ -1,7 +1,7 @@
 require_relative "string"
 class Dictionary
   def self.suggest_correct_word(wrong_word, suggestions)
-    length_of_words_hash = Hash.new { |hash,key| hash[key] = [] }
+    length_of_words_hash = Hash.new { |hash, key| hash[key] = [] }
     max_key = 0
     suggestions.each do |suggestion|
       key = wrong_word.length_of_longest_common_subsequence(suggestion)
