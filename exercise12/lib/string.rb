@@ -15,6 +15,6 @@ class String
         special += 1
       end
     end
-    "\nLowercase : #{lowercase}\nUppercase : #{uppercase}\nDigits : #{digit}\nSpecial Characters : #{special}\n"
+    "\nLowercase : #{ lowercase }\nUppercase : #{ uppercase }\nDigits : #{ digit }\nSpecial Characters : #{ special }\n"
   end
 end
