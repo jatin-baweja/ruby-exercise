@@ -6,12 +6,12 @@ def pascal_generator(lines)
 end
 def pascal(number)
   pascal_generator(number) do |array, num|
-    for i in 0..num
-      print array[i], " "
+    for element in array
+      print element, " "
     end
-    array[num+1] = 0
+    array[num + 1] = 0
     (num + 1).downto(1) do |j|
-      array[j] += array[j-1]
+      array[j] += array[j - 1]
     end
     print "\n"
     array
