@@ -4,6 +4,7 @@ def pascal_generator(lines)
     array_to_print = yield(array_to_print, line)
   end
 end
+
 def pascal(number)
   pascal_generator(number) do |array, num|
     for element in array
