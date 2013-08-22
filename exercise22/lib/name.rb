@@ -1,4 +1,5 @@
 class Name
+
   def initialize(firstname, lastname)
     begin
       if !firstname.nil? && !firstname.empty? && !lastname.nil? && !lastname.empty?
@@ -12,4 +13,5 @@ class Name
       puts "Error in input: #{ $! }"
     end
   end
+
 end
