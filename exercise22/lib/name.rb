@@ -1,14 +1,12 @@
 class Name
   def initialize(firstname, lastname)
     begin
-      if firstname && lastname
+      if !firstname.nil? && !firstname.empty? && !lastname.nil? && !lastname.empty?
+        raise "First name should start with a capital letter" if firstname != firstname.capitalize
         @firstname = firstname
         @lastname = lastname
-        if @firstname != @firstname.capitalize
-          raise "First name should start with a capital letter"
-        end
       else
-        raise "First Name or Last Name cannot be nil"
+        raise "First Name or Last Name cannot be empty or null"
       end
     rescue Exception
       puts "Error in input: #{ $! }"
