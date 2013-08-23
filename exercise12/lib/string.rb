@@ -4,14 +4,18 @@ class String
     uppercase = 0
     digit = 0
     special = 0
+    lowercase_range = 'a'..'z'
+    uppercase_range = 'A'..'Z'
+    digit_range = '0'..'9'
+    whitespace = /\s/
     each_char do |char|
-      if ('a'..'z') === char
+      if lowercase_range === char
         lowercase += 1
-      elsif ('A'..'Z') === char
+      elsif uppercase_range === char
         uppercase += 1
-      elsif ('0'..'9') === char
+      elsif digit_range === char
         digit += 1
-      elsif !(char =~ /\s/)
+      elsif !(char =~ whitespace)
         special += 1
       end
     end
