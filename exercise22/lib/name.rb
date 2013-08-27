@@ -1,17 +1,18 @@
+require_relative "exception"
 class Name
-
   def initialize(firstname, lastname)
     begin
-      if !firstname.nil? && !firstname.empty? && !lastname.nil? && !lastname.empty?
-        raise "First name should start with a capital letter" if firstname != firstname.capitalize
+      if firstname.nil? ||firstname.empty?
+        raise FirstNameNilOrEmptyError
+      elsif lastname.nil? || lastname.empty?
+        raise LastNameNilOrEmptyError
+      else
+        raise FirstNameNotCapitalized if firstname != firstname.capitalize
         @firstname = firstname
         @lastname = lastname
-      else
-        raise "First Name or Last Name cannot be empty or null"
       end
-    rescue Exception
-      puts "Error in input: #{ $! }"
+    rescue StandardError
+      puts $!
     end
   end
-
 end
