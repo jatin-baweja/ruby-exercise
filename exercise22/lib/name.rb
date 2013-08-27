@@ -2,7 +2,7 @@ require_relative "exception"
 class Name
   def initialize(firstname, lastname)
     begin
-      if firstname.nil? ||firstname.empty?
+      if firstname.nil? || firstname.empty?
         raise FirstNameNilOrEmptyError
       elsif lastname.nil? || lastname.empty?
         raise LastNameNilOrEmptyError
