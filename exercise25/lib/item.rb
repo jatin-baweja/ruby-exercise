@@ -1,7 +1,7 @@
 class Item
   SALES_TAX_RATE = 0.1
   IMPORT_DUTY_RATE = 0.05
-  attr_reader :name, :price, :sales_tax, :import_duty, :price_incld_tax
+  attr_reader :name, :price
 
   def initialize(name, price, imported, sales_tax_exempted)
     @name = name
@@ -37,5 +37,7 @@ class Item
     details_array = []
     details_array.push(name, price, sales_tax, import_duty, price_incld_tax)
   end
+
+  private :sales_tax, :import_duty
 
 end
