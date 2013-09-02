@@ -46,4 +46,6 @@ class Tabular
     column_width
   end
 
+  private_class_method :get_column_widths, :get_row_length
+
 end
