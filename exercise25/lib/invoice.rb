@@ -23,7 +23,7 @@ class Invoice
     headers = []
     headers.push("Name", "Price", "Sales Tax", "Import Duty", "Price Including Tax")
   end
-  
+
   def grand_total
     "Grand Total : #{ generate_total }"
   end
@@ -39,5 +39,7 @@ class Invoice
     end
     list_of_items
   end
+
+  private :generate_total, :row_headers, :grand_total, :data_array
 
 end
