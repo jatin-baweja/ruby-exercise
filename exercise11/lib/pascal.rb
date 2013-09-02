@@ -1,20 +1,23 @@
-def pascal_generator(lines)
-  array_to_print = [1]
-  (0..lines).each do |line|
-    array_to_print = yield(array_to_print, line)
-  end
-end
+module Pascal
 
-def pascal(number)
-  pascal_generator(number) do |array, num|
-    for element in array
-      print element, " "
+  def pascal_line_iterator(number_of_lines)
+    pascal_line = [1]
+    yield pascal_line.dup
+    i = 0
+    while i < number_of_lines
+      pascal_line.push(0).reverse!.each_index { |index| pascal_line[index] += (pascal_line[index + 1] ? pascal_line[index + 1] : 0) }
+      pascal_line.reverse!
+      yield pascal_line.dup
+      i += 1
     end
-    array[num + 1] = 0
-    (num + 1).downto(1) do |j|
-      array[j] += array[j - 1]
-    end
-    print "\n"
-    array
   end
+
+  def pascal(number)
+    lines = []
+    pascal_line_iterator(number) do |line|
+      lines.push(line)
+    end
+    lines
+  end
+
 end
