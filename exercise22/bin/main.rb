@@ -10,3 +10,5 @@ name2 = Name.new(first_name, last_name)
 first_name = nil
 #Call with first name and last name nil
 name3 = Name.new(first_name, last_name)
+#Call with correct format(no exception raised)
+name1 = Name.new("Abc", "xyz")
