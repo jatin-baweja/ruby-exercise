@@ -1,18 +1,20 @@
 require_relative "exception"
+require_relative "object"
 class Name
+
   def initialize(firstname, lastname)
-    begin
-      if firstname.nil? || firstname.empty?
-        raise FirstNameNilOrEmptyError
-      elsif lastname.nil? || lastname.empty?
-        raise LastNameNilOrEmptyError
-      else
-        raise FirstNameNotCapitalized if firstname != firstname.capitalize
-        @firstname = firstname
-        @lastname = lastname
-      end
+    if firstname.nilOrEmpty?
+      raise FirstNameNilOrEmptyError
+    elsif lastname.nilOrEmpty?
+      raise LastNameNilOrEmptyError
+    elsif firstname != firstname.capitalize
+      raise FirstNameNotCapitalized 
+    else
+      @firstname = firstname
+      @lastname = lastname
+    end
     rescue StandardError
       puts $!
-    end
   end
+
 end
